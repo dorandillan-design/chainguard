@@ -1,0 +1,48 @@
+[
+  {
+    "id": "metamask",
+    "name": "MetaMask",
+    "icon": "assets/wallets/metamask.svg",
+    "chains": [
+      "ethereum",
+      "polygon",
+      "bsc"
+    ],
+    "official": true,
+    "type": "software"
+  },
+  {
+    "id": "walletconnect",
+    "name": "WalletConnect",
+    "icon": "assets/wallets/walletconnect.svg",
+    "chains": [
+      "ethereum",
+      "polygon",
+      "bsc"
+    ],
+    "official": true,
+    "type": "protocol"
+  },
+  {
+    "id": "ledger",
+    "name": "Ledger",
+    "icon": "assets/wallets/ledger.svg",
+    "chains": [
+      "ethereum",
+      "polygon"
+    ],
+    "official": true,
+    "type": "hardware"
+  },
+  {
+    "id": "trust",
+    "name": "Trust Wallet",
+    "icon": "assets/wallets/trust.svg",
+    "chains": [
+      "ethereum",
+      "bsc"
+    ],
+    "official": true,
+    "type": "software"
+  }
+]

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChainGuard Protocol | Secure Multichain Wallet Interface</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+    <script src="js/networkMetrics.js"></script>
+
+    <script src="js/terminalScanner.js"></script>
+
+    <script src="js/blockchainGlobe.js"></script>
+
+</head>
+
+<body>
+
+    <div id="tsparticles"></div>
+    <div class="web3-float">
+        <img src="assets/eth.svg" class="eth" alt="">
+        <img src="assets/polygon.svg" class="polygon" alt="">
+        <img src="assets/bsc.svg" class="bsc" alt="">
+    </div>
+    <!-- ================= FLOATING PARTICLES / HERO BACKGROUND ================= -->
+
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="header-container">
+            <div id="wallet-pill" class="wallet-pill hidden">
+                <span class="wallet-dot"></span>
+                <span id="wallet-short"></span>
+            </div>
+
+            <div class="logo-container">
+                <img src="logo.png" alt="ChainGuard Protocol Logo" class="logo" />
+                <h1 class="gradient-text">ChainGuard Protocol</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero-section">
+        <div class="hero-content fade-in">
+            <h2 class="gradient-text">Next-Generation Protection for the Multichain Era</h2>
+            <p>
+                ChainGuard is an advanced Web3 protection protocol designed to secure wallet connectivity and safeguard
+                digital assets across multiple blockchain ecosystems.
+            </p>
+            <p class="hero-disclaimer">
+                ⚠️ ChainGuard never moves funds without explicit user approval.
+                No assets are stored or controlled by this application.
+            </p>
+            <a href="app.html" class="cta-button">Connect Wallet</a>
+        </div>
+
+
+        <!-- Demo Stats -->
+        <div class="hero-stats">
+            <div class="stat" data-target="1240">0</div>
+            <p>Users Tested</p>
+            <div class="stat" data-target="70">0</div>
+            <p>Supported Chains</p>
+            <div class="stat" data-target="10">0</div>
+            <p>Wallets Compatible</p>
+        </div>
+
+        <div class="network-status">
+            <h3>Network Status</h3>
+
+            <div class="network-grid">
+
+                <div class="network-card">
+                    <span class="network-dot eth"></span>
+                    Ethereum
+                    <span class="network-live">Live</span>
+                </div>
+
+                <div class="network-card">
+                    <span class="network-dot bsc"></span>
+                    BNB Chain
+                    <span class="network-live">Live</span>
+                </div>
+
+                <div class="network-card">
+                    <span class="network-dot polygon"></span>
+                    Polygon
+                    <span class="network-live">Live</span>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <section class="network-metrics fade-in">
+
+            <h2 class="gradient-text">Live Blockchain Metrics</h2>
+
+            <div class="metrics-grid">
+
+                <div class="metric-card">
+
+                    <h3>Ethereum</h3>
+
+                    <div class="metric">
+                        <span>Block</span>
+                        <strong id="ethBlock">19845221</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>TPS</span>
+                        <strong id="ethTPS">17.2</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Gas</span>
+                        <strong id="ethGas">24 Gwei</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <h3>BNB Chain</h3>
+
+                    <div class="metric">
+                        <span>Block</span>
+                        <strong id="bscBlock">36192841</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>TPS</span>
+                        <strong id="bscTPS">32.4</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Gas</span>
+                        <strong id="bscGas">3 Gwei</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <h3>Polygon</h3>
+
+                    <div class="metric">
+                        <span>Block</span>
+                        <strong id="polyBlock">51589322</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>TPS</span>
+                        <strong id="polyTPS">41.8</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Gas</span>
+                        <strong id="polyGas">68 Gwei</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <section class="terminal-section fade-in">
+
+                <h2 class="gradient-text">ChainGuard Security Scanner</h2>
+
+                <div class="terminal-window">
+
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">chainguard-scan.exe</span>
+                    </div>
+
+                    <div class="terminal-body" id="terminalOutput"></div>
+
+                </div>
+
+            </section>
+
+            <section class="activity-section fade-in">
+
+                <h2 class="gradient-text">Live Protocol Activity</h2>
+
+                <div class="activity-feed">
+
+                    <ul id="activityList"></ul>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+    </section>
+
+    <div class="glass-divider"></div>
+
+    <!-- ================= SUPPORTED WALLETS ================= -->
+    <section class="wallet-preview-section fade-in">
+        <h2>Supported Wallets</h2>
+        <p>ChainGuard works with leading Web3 wallets across multiple chains.</p>
+
+        <div class="wallet-grid">
+            <a href="app.html" class="wallet-card">
+                <img src="assets/metamask.svg" alt="MetaMask">
+                <span>MetaMask</span>
+            </a>
+
+            <a href="app.html" class="wallet-card">
+                <img src="assets/walletconnect.svg" alt="WalletConnect">
+                <span>WalletConnect</span>
+            </a>
+
+            <a href="app.html" class="wallet-card">
+                <img src="assets/coinbase.svg" alt="Coinbase">
+                <span>Coinbase</span>
+            </a>
+
+            <a href="app.html" class="wallet-card">
+                <img src="assets/trust.svg" alt="Zerion">
+                <span>Zerion</span>
+            </a>
+
+            <a href="app.html" class="wallet-card">
+                <img src="assets/okx.svg" alt="OKX">
+                <span>OKX</span>
+            </a>
+
+            <a href="app.html" class="wallet-card">
+                <img src="assets/safepal.svg" alt="SafePal">
+                <span>SafePal</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="glass-divider"></div>
+
+    <!-- ================= FEATURES ================= -->
+    <section id="features" class="features-section">
+
+        <h2 class="section-title">Core Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Wallet Access</h3>
+                <p>Connect and manage multiple crypto wallets securely using advanced encryption and protection
+                    protocols.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Transactions</h3>
+                <p>Execute blockchain transactions instantly with optimized smart contract interactions.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Multi-Chain Support</h3>
+                <p>Access Ethereum, BNB Chain, Polygon and other networks in one unified interface.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Real-Time Analytics</h3>
+                <p>Track wallet balances, transaction history, and market insights in real time.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="glass-divider"></div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about-section fade-in">
+        <h2 class="gradient-text">About ChainGuard</h2>
+        <p>
+            Introducing ChainGuard — a powerful new multichain protection protocol built for the next generation of Web3
+            users. With intelligent validation systems and seamless blockchain integration, ChainGuard delivers a new
+            standard of wallet security designed to protect assets while enabling frictionless access to decentralized
+            networks.
+            ChainGuard Protocol is built for developers, educators, and blockchain learners.
+            It provides a secure interface for understanding multichain wallet interactions
+            without custodial risk.
+        </p>
+    </section>
+
+    <div class="glass-divider"></div>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta-section fade-in">
+        <h2 class="gradient-text">Get Started Safely</h2>
+        <p>Explore wallet interactions with the lowest gas fee</p>
+
+    </section>
+
+    <div class="glass-divider"></div>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="contact-section fade-in">
+        <h2 class="gradient-text">Contact</h2>
+        <p>For documentation, partnerships, or questions:</p>
+        <p><strong>Email:</strong> support@chainguard.protocol</p>
+    </section>
+
+    <section class="testimonial-ticker">
+
+        <div class="ticker-wrap">
+
+            <div class="ticker">
+
+                <span>⭐ "ChainGuard helped secure my DeFi wallet instantly." – Alex R.</span>
+
+                <span>⭐ "Best multichain security interface I've used." – DeFi Trader</span>
+
+                <span>⭐ "Fast wallet validation and great UX." – CryptoDev</span>
+
+                <span>⭐ "Finally a protocol focused on wallet safety." – Polygon User</span>
+
+                <span>⭐ "ChainGuard security scans saved me from malicious contracts." – Web3 Investor</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="glass-divider"></div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer fade-in">
+        <p>
+            © 2025 ChainGuard Protocol. All rights reserved.<br />
+            This application is non-custodial.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scroll.js"></script>
+    <script src="js/counters.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/networkMetrics.js"></script>
+    <script src="js/terminalScanner.js"></script>
+    <script src="js/blockchainGlobe.js"></script>
+    <script src="js/activityFeed.js"></script>
+
+    <script>
+        /* ================= PARTICLES.JS HERO BACKGROUND ================= */
+        tsParticles.load("tsparticles", {
+            fpsLimit: 60,
+            background: { color: "transparent" },
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: ["#4fd1ff", "#9b7bff", "#00ffa3"] },
+                shape: { type: "circle" },
+                opacity: { value: 0.2, random: true },
+                size: { value: 4, random: true },
+                move: { enable: true, speed: 1.2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detectsOn: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                },
+                modes: {
+                    repulse: { distance: 80, duration: 0.4 },
+                    push: { quantity: 4 }
+                }
+            },
+            detectRetina: true
+        });
+    </script>
+</body>
+
+</html>

